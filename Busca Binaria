@@ -1,0 +1,16 @@
+v,x = eval(input()), int(input())
+n = len(v)
+i,j = 0,n-1
+def buscabinaria(v):
+    global i
+    global j
+    if i > j: return -1
+    m = (i+j)//2
+    if v[m] < x: 
+        i=m+1
+        return buscabinaria(v)
+    if v[m] > x: 
+        j=m-1
+        return buscabinaria(v)
+    if v[m] == x: return m
+print(buscabinaria(v))
